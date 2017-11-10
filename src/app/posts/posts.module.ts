@@ -18,7 +18,7 @@ const routes: Routes = [
     children: [
       {path: '', component: PostsListComponent},
       {path: ':id', component: PostComponent}
-    ]
+    ],
   },
 
 ];

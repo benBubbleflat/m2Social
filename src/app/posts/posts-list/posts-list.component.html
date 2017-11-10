@@ -1,7 +1,7 @@
 
 <div style="text-align:center"> Liste des posts à afficher : </div>
 <div *ngFor="let post of posts, let i = index">
-    <a [routerLink]="['/posts/'+(i+1)]">
-        <app-post [post]="post"> </app-post><span><a [routerLink]="'/edit/'+(i+1)">MODIFIER</a></span>
+    <a [routerLink]="(i+1)">
+        <app-post [post]="post"> </app-post>
     </a>
 </div>

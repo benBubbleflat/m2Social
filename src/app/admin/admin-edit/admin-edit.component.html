@@ -1,5 +1,6 @@
 
 <form (ngSubmit)="submit()" #postForm="ngForm">
   <input required placeholder="Contenu" name="content" type="textarea" [(ngModel)]="post.content" minlength="2" required/>
-  <button type="submit">Ajouter</button>
+  <button type="submit" >Ajouter</button>
+  <div *ngIf="success">POST MIS A JOUR !!</div>
 </form>
