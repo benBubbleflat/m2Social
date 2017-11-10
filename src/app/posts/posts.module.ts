@@ -14,10 +14,11 @@ import {CommentsService} from '../comments/comments.service';
 
 const routes: Routes = [
   {
-    path: 'posts', component: PostsListComponent,
+    path: 'posts', component: PostsRootComponent,
     children: [
+      {path: ':id', component: PostComponent},
       {path: '', component: PostsListComponent},
-      {path: ':id', component: PostComponent}
+
     ],
   },
 
