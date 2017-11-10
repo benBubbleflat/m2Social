@@ -15,4 +15,12 @@ export class PostsService {
   getAll(): Observable<Post[]> {
     return this.http.get('/api/posts');
   }
+
+  add(livre: Post): void {
+    this.http.post<Post>('/api/posts', livre).subscribe();
+  }
+
+  update(id: number, livre: Post): void {
+    this.http.put(`/api/posts/${id}`, livre).subscribe();
+  }
 }

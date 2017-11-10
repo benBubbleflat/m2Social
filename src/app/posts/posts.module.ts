@@ -8,18 +8,19 @@ import { PostsRootComponent } from './posts-root/posts-root.component';
 import { PostComponent } from './post/post.component';
 
 import {CommentComponent} from '../comments/comment/comment.component';
-import {CommentsService} from "../comments/comments.service";
+import {CommentsService} from '../comments/comments.service';
+
+
 
 const routes: Routes = [
   {
-    path: '', component: PostsRootComponent,
+    path: 'posts', component: PostsListComponent,
+    children: [
+      {path: '', component: PostsListComponent},
+      {path: ':id', component: PostComponent}
+    ]
   },
-  {
-    path: 'posts', component: PostsListComponent
-  },
-  {
-    path: 'posts/:id', component: PostComponent
-  }
+
 ];
 
 @NgModule({
@@ -29,6 +30,6 @@ const routes: Routes = [
   ],
   declarations: [PostsListComponent, PostsRootComponent, PostComponent, CommentComponent],
   exports: [ PostsRootComponent, CommentComponent],
-  providers: [PostsService,CommentsService]
+  providers: [PostsService, CommentsService]
 })
 export class PostsModule { }
